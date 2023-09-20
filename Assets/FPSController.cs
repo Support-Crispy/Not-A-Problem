@@ -8,6 +8,7 @@ public class FPSController : MonoBehaviour
     public Camera playerCamera;
     public float walkSpeed = 6f;
     public float runSpeed = 12f;
+    public float slideSpeed = 18f;
     public float jumpPower = 7f;
     public float gravity = 10f;
 
@@ -33,7 +34,7 @@ public class FPSController : MonoBehaviour
     void Update()
     {
 
-        #region Handles Movment
+        #region Handles Movement
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
@@ -60,6 +61,17 @@ public class FPSController : MonoBehaviour
         {
             moveDirection.y -= gravity * Time.deltaTime;
         }
+
+        #endregion
+      
+
+        #region Handles Sliding
+
+            bool isSliding = Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftControl);
+            float sliSpeedX = canMove ? (isSliding ? slideSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
+            float sliSpeedY = canMove ? (isSliding ? slideSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
+            float MovementDirectionY = moveDirection.y;
+        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
         #endregion
 

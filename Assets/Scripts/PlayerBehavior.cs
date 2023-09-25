@@ -15,7 +15,7 @@ public class PlayerBehavior : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.RightControl))
         {
             PlayerTakeDmg(25);
             Debug.Log(GameManager.gameManager._playerHealth.Health);

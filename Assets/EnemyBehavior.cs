@@ -107,7 +107,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void DestroyEnemy()
     {
-        Destroy(GameObject);
+        Destroy(GameObject.Find("Sluggus"));
     }
 
     private void OnDrawGizmosSelected()

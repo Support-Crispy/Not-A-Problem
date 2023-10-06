@@ -1,15 +1,7 @@
-﻿
+
 using UnityEngine;
 using TMPro;
 
-/// Thanks for downloading my projectile gun script! :D
-/// Feel free to use it in any project you like!
-/// 
-/// The code is fully commented but if you still have any questions
-/// don't hesitate to write a yt comment
-/// or use the #coding-problems channel of my discord server
-/// 
-/// Dave
 public class ProjectileGun : MonoBehaviour
 {
     //bullet 
@@ -22,7 +14,6 @@ public class ProjectileGun : MonoBehaviour
     public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
-    public int damage;
 
     int bulletsLeft, bulletsShot;
 
@@ -152,10 +143,5 @@ public class ProjectileGun : MonoBehaviour
         //Fill magazine
         bulletsLeft = magazineSize;
         reloading = false;
-    }
-
-        private void TargetHit()
-    {
-        damage = 20;
     }
 }

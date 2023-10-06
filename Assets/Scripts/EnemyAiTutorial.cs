@@ -12,8 +12,6 @@ public class EnemyAiTutorial : MonoBehaviour
 
     public float health;
 
-    public float damage;
-
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet;
